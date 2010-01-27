@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmicAlley", "AlgorithmicAlley\AlgorithmicAlley.csproj", "{612E180D-3777-4393-A01C-B34BDABD29D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmicAlleyTests", "AlgorithmicAlleyTests\AlgorithmicAlleyTests.csproj", "{5DF48CEF-5B86-40E0-8B91-7D31D91FD87E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{612E180D-3777-4393-A01C-B34BDABD29D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{612E180D-3777-4393-A01C-B34BDABD29D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{612E180D-3777-4393-A01C-B34BDABD29D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{612E180D-3777-4393-A01C-B34BDABD29D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DF48CEF-5B86-40E0-8B91-7D31D91FD87E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DF48CEF-5B86-40E0-8B91-7D31D91FD87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DF48CEF-5B86-40E0-8B91-7D31D91FD87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DF48CEF-5B86-40E0-8B91-7D31D91FD87E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
