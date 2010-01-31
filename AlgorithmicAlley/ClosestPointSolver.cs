@@ -54,5 +54,31 @@ namespace AlgorithmicAlley
             return allPairs.OrderBy(seg => seg.LengthSquared())
                     .First();
         }
+
+        public Segment Closest_Recursive(List<PointF> points)
+        {
+            if (points.Count() < 4) return Closest_BruteForce(points);
+
+            int split = points.Count() / 2;
+            var ordered = points.OrderBy(point => point.X);     // sort the points by their x value
+            var pointsOnLeft = ordered.Take(split).ToList();    // split into two groups, those to the
+            var pointsOnRight = ordered.Skip(split).ToList();   // left and those to the right
+
+            var leftMin = Closest_Recursive(pointsOnLeft);
+            var rightMin = Closest_Recursive(pointsOnRight);
+
+            float minDist = Math.Min(leftMin.Length(), rightMin.Length());
+
+            var xDivider = pointsOnLeft.Last().X;
+            var closeY = pointsOnRight.TakeWhile(point => point.X - xDivider < minDist).OrderBy(point => point.Y);
+
+            var crossingPairs = pointsOnLeft.SkipWhile(point => xDivider - point.X > minDist)
+                .SelectMany(p1 => closeY.SkipWhile(i => i.Y < p1.Y - minDist)
+                    .TakeWhile(i => i.Y < p1.Y + minDist)
+                .Select(p2 => new Segment(p1, p2)));
+
+            return crossingPairs.Union(new[] { leftMin, rightMin })
+                .OrderBy(segment => segment.Length()).First();
+        }
     }
 }

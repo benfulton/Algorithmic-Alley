@@ -36,5 +36,18 @@ namespace AlgorithmicAlleyTests
             Segment closest = new ClosestPointSolver().Closest_BruteForce(points);
             Assert.Equal(expected, closest);
         }
+
+        [Fact]
+        public void Brute_force_attack_returns_identical_results_to_divide_and_conquer()
+        {
+            var points = CreatePoints(1000).ToList();
+            ClosestPointSolver solver = new ClosestPointSolver();
+            Segment force = solver.Closest_BruteForce(points);
+            Segment DAndC = solver.Closest_Recursive(points);
+            Assert.Equal(force.Length(), DAndC.Length());
+
+        }
+
+
     }
 }
