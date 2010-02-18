@@ -48,6 +48,18 @@ namespace AlgorithmicAlleyTests
 
         }
 
+        [Fact]
+        public void Brute_force_attack_returns_identical_results_to_FortuneHopcroft_attack()
+        {
+            var randomizer = new Random(10);
+            var points = Enumerable.Range(0, 1000).Select(i => (float)randomizer.NextDouble()).ToList();
+            ClosestPointSolver solver = new ClosestPointSolver();
+
+            var p = solver.ClosestFloats_BruteForce(points);
+            var q = solver.ClosestFloats(points);
+            Assert.Equal(Math.Abs(p.X - p.Y), Math.Abs(q.X - q.Y));
+        }
+
 
     }
 }
