@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClosestPointSolver.cs" />
-    <Compile Include="CyclicScheduling.cs" />
+    <Compile Include="CyclicScheduling\CyclicScheduling.cs" />
+    <Compile Include="CyclicScheduling\Job.cs" />
+    <Compile Include="CyclicScheduling\UniformConstraint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler.cs" />
   </ItemGroup>
