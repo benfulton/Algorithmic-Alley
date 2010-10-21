@@ -56,6 +56,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SplitterTests.cs" />
     <Compile Include="ClosestPointTests.cs" />
     <Compile Include="CyclicSchedulingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -60,5 +60,10 @@ namespace AlgorithmicAlley
             return startingTimes.Count;
         }
 
+        public int Height(Job other)
+        {
+            return Blockers.Where(b => b.BlockingJob == other).Select(b => b.Iterations).Sum();
+        }
+
     }
 }

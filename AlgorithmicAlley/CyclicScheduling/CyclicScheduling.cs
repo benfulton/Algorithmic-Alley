@@ -56,5 +56,30 @@ namespace AlgorithmicAlley
             var values = _jobs.Select(x => new { job = x, starttime = x.StartTime(i), endtime = x.StartTime(i) + x.processingTime });
             return values.Max(val => val.endtime) - values.Min(val => val.starttime);
         }
+
+        public bool IsPeriodic()
+        {
+            return _jobs.All(job =>
+                {
+                    int period = job.StartTime(1) - job.StartTime(0);
+                    for (int k = 1; k < job.CompletedIterations(); k++)
+                    {
+                        if (job.StartTime(k) - job.StartTime(k - 1) != period)
+                            return false;
+                    }
+
+                    return true;
+                });
+        }
+
+        public int Height(List<Job> path)
+        {
+            int result = 0;
+            for (int i = 0; i < path.Count-1; i++)
+            {
+                result += path[i].Height(path[i + 1]);
+            }
+            return result;
+        }
     }
 }

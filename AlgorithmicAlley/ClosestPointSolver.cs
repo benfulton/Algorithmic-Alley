@@ -39,7 +39,12 @@ namespace AlgorithmicAlley
         public override string ToString()
         {
             return String.Format("{0} - {1}", P1, P2);
-        } 
+        }
+
+        public override int GetHashCode()
+        {
+            return P1.GetHashCode() ^ P2.GetHashCode();
+        }
     }
     public class Buckets
     {

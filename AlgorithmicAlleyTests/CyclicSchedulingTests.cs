@@ -140,10 +140,17 @@ namespace AlgorithmicAlleyTests
             _jobs[4].Constrain(new UniformConstraint(_jobs[3], 0, 0));
 
             var sched = new CyclicSchedule(_jobs);
-            sched.Process(3);
+            sched.Process(100);
             Assert.Equal(22m, sched.IterationCompletionTime(0));
             Assert.Equal(24m, sched.IterationCompletionTime(1));
             Assert.Equal(26m, sched.IterationCompletionTime(2));
+
+            Assert.True(sched.IsPeriodic());
+        }
+
+        [Fact]
+        public void foo()
+        {
         }
     }
 }
