@@ -51,14 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WordSplit\AggregatingSplitter.cs" />
     <Compile Include="ClosestPointSolver.cs" />
     <Compile Include="CyclicScheduling\CyclicScheduling.cs" />
     <Compile Include="CyclicScheduling\Job.cs" />
     <Compile Include="CyclicScheduling\UniformConstraint.cs" />
+    <Compile Include="WordSplit\DivideAndConquerSplitter.cs" />
+    <Compile Include="WordSplit\GroupingSplitter.cs" />
+    <Compile Include="WordSplit\NormalSplitter.cs" />
+    <Compile Include="WordSplit\ParallelizingSplitter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler.cs" />
-    <Compile Include="Splitter.cs" />
+    <Compile Include="WordSplit\Splitter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

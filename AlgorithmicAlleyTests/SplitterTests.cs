@@ -27,10 +27,17 @@ namespace AlgorithmicAlleyTests
         [Fact]
         public void ParallelSplitterTests()
         {
-            var splitter = new ParallelSplitter();
+            var splitter = new GroupingSplitter();
             Check(splitter);
         }
-        
+
+        [Fact]
+        public void DivideAndConquerSplitterTests()
+        {
+            var splitter = new DivideAndConquerSplitter();
+            Check(splitter);
+        }
+
         void Check(Splitter splitter)
         {
             Assert.Equal(new List<string> { "This", "is", "a", "sample" }, splitter.Split("This is a sample").ToList());
@@ -56,9 +63,16 @@ namespace AlgorithmicAlleyTests
         }
 
         [Fact]
-        public void CanSplitparallel()
+        public void CanSplitDivideAndConquer()
         {
-            var splitter = new ParallelSplitter();
+            var splitter = new DivideAndConquerSplitter();
+            //SplitHugeString(splitter);
+        }
+
+        [Fact]
+        public void CanSplitGrouping()
+        {
+            var splitter = new GroupingSplitter();
             SplitHugeString(splitter);
         }
 
