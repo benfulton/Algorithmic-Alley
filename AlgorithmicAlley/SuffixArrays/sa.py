@@ -24,7 +24,7 @@ if __name__ == "__main__":
     with open("..\MobyDick.txt") as f:
         m = f.read()
     str = m#[:100000]
-    print len(str)
+    print(len(str))
 #    str = "mississipi"
     start_time = time.time()
     #x = get_suffix_array(str)
